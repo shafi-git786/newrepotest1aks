@@ -38,7 +38,7 @@ env:
   AZURE_CONTAINER_REGISTRY: "aksacrdeploy1"
   CONTAINER_NAME: "aksacrdeploy1.azurecr.io"
   RESOURCE_GROUP: "shafi-rg"
-  CLUSTER_NAME: "shafiaksdeploy"
+  CLUSTER_NAME: "shafiaksdeploy1"
   DEPLOYMENT_MANIFEST_PATH: "/home/sachin/"
 
 jobs:
@@ -55,9 +55,7 @@ jobs:
       - name: Azure login
         uses: azure/login@v1.4.6
         with:
-          client-id: a59fef07-579f-46cb-ac62-5960b39864d1
-          tenant-id: 00e7835c-bec1-4dcc-9217-bc85ffb7dcd9
-          subscription-id: 15de8105-ca96-4bf3-b8b3-1864e937f13c
+           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
       - name: 'Run az commands'
         run: |
@@ -85,9 +83,7 @@ jobs:
       - name: Azure login
         uses: azure/login@v1.4.6
         with:
-          client-id: a59fef07-579f-46cb-ac62-5960b39864d1
-          tenant-id: 00e7835c-bec1-4dcc-9217-bc85ffb7dcd9
-          subscription-id: 15de8105-ca96-4bf3-b8b3-1864e937f13c
+           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       # Use kubelogin to configure your kubeconfig for Azure auth
       - name: Set up kubelogin for non-interactive login
