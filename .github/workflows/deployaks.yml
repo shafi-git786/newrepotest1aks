@@ -58,6 +58,12 @@ jobs:
           client-id: a59fef07-579f-46cb-ac62-5960b39864d1
           tenant-id: 00e7835c-bec1-4dcc-9217-bc85ffb7dcd9
           subscription-id: 15de8105-ca96-4bf3-b8b3-1864e937f13c
+          
+      - name: 'Run az commands'
+        run: |
+          az account show
+          az group list
+          pwd    
 
       # Builds and pushes an image up to your Azure Container Registry
       - name: Build and push image to ACR
