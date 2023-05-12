@@ -35,8 +35,8 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY: "acrtestts"
-  CONTAINER_NAME: "acrtestts.azurecr.io"
+  AZURE_CONTAINER_REGISTRY: "aksacrdeploy1"
+  CONTAINER_NAME: "aksacrdeploy1.azurecr.io"
   RESOURCE_GROUP: "shafi-rg"
   CLUSTER_NAME: "shafiaksdeploy"
   DEPLOYMENT_MANIFEST_PATH: "/home/sachin/"
